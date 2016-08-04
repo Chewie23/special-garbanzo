@@ -1,3 +1,0 @@
-This is a Ebay Scraper that uses the Ebay API.
-
-I wanted to use Amazon's API, but it is kind of a hot mess, with like three or four itnerdependencies that rely on each other, in a certain order
