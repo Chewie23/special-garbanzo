@@ -1,7 +1,7 @@
 from ebaysdk.finding import Connection as Finding
 import json
 
-#"AlanChu-FunTime-PRD-b13d29647-ce02e636" AppID
+#"REDACTED" AppID
 
 try:
     api = Finding(config_file = 'ebay.yaml')
