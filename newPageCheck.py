@@ -3,13 +3,18 @@ import webbrowser
 driver = webdriver.PhantomJS() #needed to add PhantomJS program into ~/.bashrc
 
 """
-IT WORKSSS!!!! May want to refine it
-What I want this to do:
+What it does:
+
 Read the splash page of Cucumber Quest, see if there is a new page.
 
-If new page, will open link to the page.
+If new page, will open link to the page, saves/updates date on file.
 
 If no new page, then will yield a statement saying so!
+"""
+
+"""
+TODO:
+- refine and functionalize.
 """
 
 URL = "http://cucumber.gigidigi.com/"
@@ -25,14 +30,7 @@ recent_page_link_URL = ""
 for n in recent_page_link:
     recent_page_link_URL += n.get_attribute("href") #This translates the above into a URL
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------
-
-#Experimenting with "clicking" a link, navigating to it, and then reading stuff.
-#The may be a more refined way of doing this
-
-driver.get(recent_page_link_URL) #Goes into new URL. Is there a better way? This seems to be the most obvious/easiest
-
-#make a function. I am repeating myself here.
+driver.get(recent_page_link_URL) #Goes into new URL.
 
 class_name_for_newest_page = 'post-details'
 css_selector_for_newest_page = "a[rel~='bookmark']"
@@ -46,8 +44,6 @@ newest_page_URL = ""
 
 for n in URL_elem:
     newest_page_URL += n.get_attribute("href") #This translates the above into a URL
-
-#--------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 with open('CucoQuest.txt', 'r') as f:
